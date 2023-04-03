@@ -3,16 +3,6 @@ import os
 
 from tools.LogUtil import my_logger
 
-"""
-Blastn Gene:
-blastn -query gene.fasta -out ./results/blast/gene.dna.blast（输出按时间命名，防止文件被覆盖） -db ./index/virus（这是DNA数据库的名称,可选择，共7个，我这里建好放在路径里面即可） -outfmt 6 （参数调整） -evalue 1e-5 （参数调整） -num_threads 2 -max_target_seqs 10 （参数调整）
-
-Blastp Protein:
-blastp -query protein.fasta -out ./results/blast/protein.rep.blast（输出按时间命名，防止文件被覆盖） -db ./index/virus（这是DNA数据库的名称,可选择，共7个，我这里建好放在路径里面即可） -outfmt 6 （参数调整）-evalue 1e-5 （参数调整） -num_threads 2 -max_target_seqs 10 （参数调整）
-
-"""
-
-
 def BLASTProteinProcess(input_path, parameters, output_path):
     database, outfmt, evalue, max_target_seqs = parameters["protein_database_type"], parameters["protein_outfmt"], parameters[
         "protein_evalue"], parameters["protein_max_target_seqs"]
